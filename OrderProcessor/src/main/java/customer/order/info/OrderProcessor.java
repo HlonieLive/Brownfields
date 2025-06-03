@@ -1,13 +1,18 @@
 package customer.order.info;
 
+import customer.order.payment.PaymentMethod;
+import customer.order.processor.PaymentProcessor;
+import customer.order.processor.PaymentProcessorFactory;
+
 public class OrderProcessor {
-    public void processOrder(String customerName, String orderDetails, String paymentMethod) {
+    public void processOrder(String customerName, String orderDetails, PaymentMethod paymentMethod) {
         double totalCost = calculateTotalCost(orderDetails);
         double tax = calculateTax(totalCost);
         double discount = calculateDiscount(customerName, totalCost);
         double finalCost = totalCost + tax - discount;
 
-//        processPayment(paymentMethod, finalCost);
+        PaymentProcessor paymentProcessor = PaymentProcessorFactory.getPaymentMethod(paymentMethod);
+        paymentProcessor.process(finalCost);
 
         printOrderSummary(customerName, orderDetails, totalCost, tax, discount, finalCost);
 
