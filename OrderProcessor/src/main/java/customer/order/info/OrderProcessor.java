@@ -9,7 +9,7 @@ public class OrderProcessor {
         double totalCost = calculateTotalCost(orderDetails);
         double tax = calculateTax(totalCost);
         double discount = calculateDiscount(customerName, totalCost);
-        double finalCost = totalCost + tax - discount;
+        double finalCost = calculateFinalCost(totalCost, tax, discount);
 
         PaymentProcessor paymentProcessor = PaymentProcessorFactory.getPaymentMethod(paymentMethod);
         paymentProcessor.process(finalCost);
