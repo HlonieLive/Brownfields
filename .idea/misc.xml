@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/OrderProcessor/pom.xml" />
+        <option value="$PROJECT_DIR$/UserAuthManager/pom.xml" />
       </list>
     </option>
   </component>
