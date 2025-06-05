@@ -12,5 +12,7 @@ public class Main {
         System.out.println();
         // Process an order with credit payment
         orderProcessor.processOrder("Loyal Customer", "Smartphone and charger", PaymentMethod.CREDIT);
+        // Process an Invalid order
+        orderProcessor.processOrder("John Doe", "TV", null);
     }
 }

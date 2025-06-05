@@ -18,11 +18,11 @@ public class OrderProcessor {
 
     }
 
-    private double calculateFinalCost(double totalCost, double tax, double discount) {
+    public double calculateFinalCost(double totalCost, double tax, double discount) {
         return totalCost + tax - discount;
     }
 
-    private void printOrderSummary(String customerName, String orderDetails, double totalCost, double tax, double discount, double finalCost) {
+    public void printOrderSummary(String customerName, String orderDetails, double totalCost, double tax, double discount, double finalCost) {
         System.out.println("Order processed successfully!");
         System.out.println("Customer Name: " + customerName);
         System.out.println("Order Details: " + orderDetails);
@@ -32,15 +32,15 @@ public class OrderProcessor {
         System.out.println("Final Cost: " + finalCost);
     }
 
-    private double calculateTotalCost(String orderDetails){
+    public double calculateTotalCost(String orderDetails){
         return 100.0;
     }
 
-    private double calculateTax(double totalCost) {
+    public double calculateTax(double totalCost) {
         return totalCost * 0.1;
     }
 
-    private double calculateDiscount(String customerName, double totalCost) {
+    public double calculateDiscount(String customerName, double totalCost) {
         if (customerName.startsWith("Loyal")) {
             return totalCost * 0.05;
         } else {
